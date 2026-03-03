@@ -46,6 +46,11 @@
                        onclick="return confirm('Deseja realmente excluir este registro?');">
                         Excluir
                     </a>
+
+                    <a th:href="@{'/pessoa/alterar/' + ${p.id}}"
+                       class="btn btn-alter">
+                        Alterar
+                    </a>
                 </td>
             </tr>
             </tbody>

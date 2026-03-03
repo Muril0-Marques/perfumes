@@ -42,6 +42,18 @@ public class PessoaController {
     }
 
     // ==============================
+    // ALTERAÇÃO ( /pessoa/alterar )
+    // ==============================
+    @GetMapping("/pessoa/alterar/{id}")
+    public String alterar(@PathVariable("id") Long id, Model model){
+
+        Pessoa pessoa = pessoaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pessoa inválida: " + id));
+
+        model.addAttribute("pessoa", pessoa);
+        return "alterar";
+    }
+
+    // ==============================
     // SALVAR (POST /pessoa/salvar)
     // ==============================
     @PostMapping("/pessoa/salvar")
